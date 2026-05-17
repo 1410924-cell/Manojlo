@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lanmi the Barber</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+background:url('manojlo1.png') no-repeat center center fixed;
+background-size:cover;
+font-family:Arial,sans-serif;
+color:white;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+z-index:-1;
+}
+
+.page{
+display:none;
+padding-bottom:100px;
+}
+
+header{
+background:#7b00ff;
+}
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#7b00ff;
+z-index:1000;
+}
+
+.custom-card{
+background:rgba(33,37,41,0.95);
+border:none;
+}
+
+.service-img{
+width:120px;
+height:120px;
+object-fit:cover;
+border-radius:20px;
+}
+
+.custom-btn{
+background:#7b00ff;
+border:none;
+color:white;
+}
+
+.custom-btn:hover{
+background:#5e00c2;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="text-center py-3 shadow">
+
+<h3 class="m-0">
+
+Lanmi the barber 💈
+
+</h3>
+
+</header>
+
+<div id="home" class="page container py-4">
+
+<h1 class="mb-4">
+
+Početna
+
+</h1>
+
+<div class="card custom-card text-white rounded-4 shadow-lg p-4">
+
+<h4>
+
+Dobrodošli u Lanmi Barber
+
+</h4>
+
+<hr>
+
+<p class="mb-1">
+
+Adresa salona:
+
+</p>
+
+<p class="fw-bold">
+
+Bele Bartoka 42, Borča
+
+</p>
+
+</div>
+
+</div>
+
+<div id="services" class="page container py-4">
+
+<h1 class="mb-4">
+
+Usluge
+
+</h1>
+
+<div class="card custom-card text-white rounded-4 shadow-lg mb-4 p-3">
+
+<div class="row align-items-center">
+
+<div class="col-4">
+
+<img src="Fade.jpg"
+class="img-fluid service-img">
+
+</div>
+
+<div class="col-8">
+
+<h3>
+
+Fade šišanje
+
+</h3>
+
+<p class="mb-1">
+
+Trajanje: 50 min
+
+</p>
+
+<p class="mb-3">
+
+Cena: 1600 RSD
+
+</p>
+
+<button class="btn custom-btn"
+onclick="reserve('Fade šišanje')">
+
+Rezerviši
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card custom-card text-white rounded-4 shadow-lg mb-4 p-3">
+
+<div class="row align-items-center">
+
+<div class="col-4">
+
+<img src="klasika.jpg"
+class="img-fluid service-img">
+
+</div>
+
+<div class="col-8">
+
+<h3>
+
+Klasično šišanje
+
+</h3>
+
+<p class="mb-1">
+
+Trajanje: 40 min
+
+</p>
+
+<p class="mb-3">
+
+Cena: 1300 RSD
+
+</p>
+
+<button class="btn custom-btn"
+onclick="reserve('Klasično šišanje')">
+
+Rezerviši
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card custom-card text-white rounded-4 shadow-lg mb-4 p-3">
+
+<div class="row align-items-center">
+
+<div class="col-4">
+
+<img src="brada.jpg"
+class="img-fluid service-img">
+
+</div>
+
+<div class="col-8">
+
+<h3>
+
+Sređivanje brade
+
+</h3>
+
+<p class="mb-1">
+
+Trajanje: 15 min
+
+</p>
+
+<p class="mb-3">
+
+Cena: 900 RSD
+
+</p>
+
+<button class="btn custom-btn"
+onclick="reserve('Sređivanje brade')">
+
+Rezerviši
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card custom-card text-white rounded-4 shadow-lg mb-4 p-3">
+
+<div class="row align-items-center">
+
+<div class="col-4">
+
+<img src="fadebrada.jpg"
+class="img-fluid service-img">
+
+</div>
+
+<div class="col-8">
+
+<h3>
+
+Fade + brada
+
+</h3>
+
+<p class="mb-1">
+
+Trajanje: 60 min
+
+</p>
+
+<p class="mb-3">
+
+Cena: 2200 RSD
+
+</p>
+
+<button class="btn custom-btn"
+onclick="reserve('Fade + brada')">
+
+Rezerviši
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="booking" class="page container py-4">
+
+<h1 class="mb-4">
+
+Rezervacija
+
+</h1>
+
+<div class="card custom-card text-white rounded-4 shadow-lg p-4">
+
+<p>
+
+Izabrana usluga:
+
+</p>
+
+<h4 id="selectedService">
+
+Nije izabrano
+
+</h4>
+
+<select id="day"
+class="form-select my-4">
+
+<option>Ponedeljak</option>
+<option>Utorak</option>
+<option>Sreda</option>
+<option>Četvrtak</option>
+<option>Petak</option>
+<option>Subota</option>
+
+</select>
+
+<button class="btn custom-btn w-100"
+onclick="confirmBooking()">
+
+Potvrdi rezervaciju
+
+</button>
+
+</div>
+
+</div>
+
+<div id="profile" class="page container py-4">
+
+<h1 class="mb-4">
+
+Profil
+
+</h1>
+
+<div class="card custom-card text-white rounded-4 shadow-lg p-4 mb-4">
+
+<h4 class="mb-3">
+
+Lični podaci
+
+</h4>
+
+<p>
+
+Ime: Đorđe
+
+</p>
+
+<p>
+
+Prezime: Siskoski
+
+</p>
+
+<p>
+
+Telefon: 0655394812
+
+</p>
+
+<p>
+
+Email: djoles@gmail.com
+
+</p>
+
+</div>
+
+<div class="card custom-card text-white rounded-4 shadow-lg p-4">
+
+<h4>
+
+Zakazani termin
+
+</h4>
+
+<hr>
+
+<p id="bookingInfo">
+
+Nemate zakazan termin
+
+</p>
+
+</div>
+
+</div>
+
+<nav class="bottom-nav d-flex justify-content-around py-2 shadow-lg">
+
+<button class="btn text-white"
+onclick="showPage('home')">
+
+Početna
+
+</button>
+
+<button class="btn text-white"
+onclick="showPage('services')">
+
+Usluge
+
+</button>
+
+<button class="btn text-white"
+onclick="showPage('profile')">
+
+Profil
+
+</button>
+
+</nav>
+
+<script>
+
+let chosenService = "";
+
+function showPage(page){
+
+let pages = document.querySelectorAll(".page");
+
+pages.forEach(function(p){
+
+p.style.display = "none";
+
+});
+
+document.getElementById(page).style.display = "block";
+
+}
+
+function reserve(service){
+
+chosenService = service;
+
+document.getElementById("selectedService").innerText = service;
+
+showPage("booking");
+
+}
+
+function confirmBooking(){
+
+let day = document.getElementById("day").value;
+
+if(chosenService === ""){
+
+alert("Izaberite uslugu prvo!");
+
+return;
+
+}
+
+let booking = chosenService + " - " + day;
+
+document.getElementById("bookingInfo").innerText = booking;
+
+localStorage.setItem("booking", booking);
+
+alert("Termin uspešno rezervisan!");
+
+showPage("profile");
+
+}
+
+window.onload = function(){
+
+showPage("home");
+
+let savedBooking = localStorage.getItem("booking");
+
+if(savedBooking){
+
+document.getElementById("bookingInfo").innerText = savedBooking;
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
