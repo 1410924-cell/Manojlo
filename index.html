@@ -17,6 +17,7 @@ background:url('manojlo1.png') no-repeat center center fixed;
 background-size:cover;
 font-family:Arial,sans-serif;
 color:white;
+margin:0;
 }
 
 body::before{
@@ -32,7 +33,7 @@ z-index:-1;
 
 .page{
 display:none;
-padding-bottom:100px;
+padding-bottom:110px;
 }
 
 header{
@@ -49,7 +50,7 @@ z-index:1000;
 }
 
 .custom-card{
-background:rgba(33,37,41,0.95);
+background:rgba(33,37,41,0.96);
 border:none;
 }
 
@@ -67,8 +68,13 @@ color:white;
 }
 
 .custom-btn:hover{
-background:#5e00c2;
+background:#5d00c4;
 color:white;
+}
+
+.nav-btn{
+font-size:14px;
+font-weight:bold;
 }
 
 </style>
@@ -77,11 +83,11 @@ color:white;
 
 <body>
 
-<header class="text-center py-3 shadow">
+<header class="text-center py-3 shadow-lg">
 
-<h3 class="m-0">
+<h3 class="m-0 fw-bold">
 
-Lanmi the barber 💈
+Lanmi the Barber 💈
 
 </h3>
 
@@ -89,15 +95,15 @@ Lanmi the barber 💈
 
 <div id="home" class="page container py-4">
 
-<h1 class="mb-4">
+<h1 class="mb-4 fw-bold">
 
 Početna
 
 </h1>
 
-<div class="card custom-card text-white rounded-4 shadow-lg p-4">
+<div class="card custom-card rounded-4 shadow-lg text-white p-4">
 
-<h4>
+<h4 class="fw-bold">
 
 Dobrodošli u Lanmi Barber
 
@@ -123,30 +129,30 @@ Bele Bartoka 42, Borča
 
 <div id="services" class="page container py-4">
 
-<h1 class="mb-4">
+<h1 class="mb-4 fw-bold">
 
 Usluge
 
 </h1>
 
-<div class="card custom-card text-white rounded-4 shadow-lg mb-4 p-3">
+<div class="card custom-card rounded-4 shadow-lg text-white p-3 mb-4">
 
 <div class="row align-items-center">
 
 <div class="col-4">
 
-<img src="Fade.jpg"
+<img src="fade.jpg"
 class="img-fluid service-img">
 
 </div>
 
 <div class="col-8">
 
-<h3>
+<h4 class="fw-bold">
 
 Fade šišanje
 
-</h3>
+</h4>
 
 <p class="mb-1">
 
@@ -173,7 +179,7 @@ Rezerviši
 
 </div>
 
-<div class="card custom-card text-white rounded-4 shadow-lg mb-4 p-3">
+<div class="card custom-card rounded-4 shadow-lg text-white p-3 mb-4">
 
 <div class="row align-items-center">
 
@@ -186,11 +192,11 @@ class="img-fluid service-img">
 
 <div class="col-8">
 
-<h3>
+<h4 class="fw-bold">
 
 Klasično šišanje
 
-</h3>
+</h4>
 
 <p class="mb-1">
 
@@ -217,7 +223,7 @@ Rezerviši
 
 </div>
 
-<div class="card custom-card text-white rounded-4 shadow-lg mb-4 p-3">
+<div class="card custom-card rounded-4 shadow-lg text-white p-3 mb-4">
 
 <div class="row align-items-center">
 
@@ -230,11 +236,11 @@ class="img-fluid service-img">
 
 <div class="col-8">
 
-<h3>
+<h4 class="fw-bold">
 
 Sređivanje brade
 
-</h3>
+</h4>
 
 <p class="mb-1">
 
@@ -261,7 +267,7 @@ Rezerviši
 
 </div>
 
-<div class="card custom-card text-white rounded-4 shadow-lg mb-4 p-3">
+<div class="card custom-card rounded-4 shadow-lg text-white p-3 mb-4">
 
 <div class="row align-items-center">
 
@@ -274,11 +280,11 @@ class="img-fluid service-img">
 
 <div class="col-8">
 
-<h3>
+<h4 class="fw-bold">
 
 Fade + brada
 
-</h3>
+</h4>
 
 <p class="mb-1">
 
@@ -309,13 +315,13 @@ Rezerviši
 
 <div id="booking" class="page container py-4">
 
-<h1 class="mb-4">
+<h1 class="mb-4 fw-bold">
 
 Rezervacija
 
 </h1>
 
-<div class="card custom-card text-white rounded-4 shadow-lg p-4">
+<div class="card custom-card rounded-4 shadow-lg text-white p-4">
 
 <p>
 
@@ -323,7 +329,8 @@ Izabrana usluga:
 
 </p>
 
-<h4 id="selectedService">
+<h4 id="selectedService"
+class="fw-bold">
 
 Nije izabrano
 
@@ -354,15 +361,15 @@ Potvrdi rezervaciju
 
 <div id="profile" class="page container py-4">
 
-<h1 class="mb-4">
+<h1 class="mb-4 fw-bold">
 
 Profil
 
 </h1>
 
-<div class="card custom-card text-white rounded-4 shadow-lg p-4 mb-4">
+<div class="card custom-card rounded-4 shadow-lg text-white p-4 mb-4">
 
-<h4 class="mb-3">
+<h4 class="fw-bold mb-3">
 
 Lični podaci
 
@@ -394,9 +401,9 @@ Email: djoles@gmail.com
 
 </div>
 
-<div class="card custom-card text-white rounded-4 shadow-lg p-4">
+<div class="card custom-card rounded-4 shadow-lg text-white p-4">
 
-<h4>
+<h4 class="fw-bold">
 
 Zakazani termin
 
@@ -416,21 +423,21 @@ Nemate zakazan termin
 
 <nav class="bottom-nav d-flex justify-content-around py-2 shadow-lg">
 
-<button class="btn text-white"
+<button class="btn text-white nav-btn"
 onclick="showPage('home')">
 
 Početna
 
 </button>
 
-<button class="btn text-white"
+<button class="btn text-white nav-btn"
 onclick="showPage('services')">
 
 Usluge
 
 </button>
 
-<button class="btn text-white"
+<button class="btn text-white nav-btn"
 onclick="showPage('profile')">
 
 Profil
